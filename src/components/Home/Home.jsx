@@ -14,17 +14,18 @@ export default class Home extends Component {
         };
     }
 
-    componentWillMount() {
-        axios.get(`http://localhost:9000/v1/notes`)
+    componentDidMount() {
+        axios.get(`http://127.0.0.1:9000/v1/notes`)
             .then(res => {
                 const notes = res.data;
+                console.log(notes)
                 this.setState({ cards: notes });
             })
     }
 
     componentDidUpdate() {
 
-        axios.get(`http://localhost:9000/v1/notes`)
+        axios.get(`http://127.0.0.1:9000/v1/notes`)
             .then(res => {
                 const notes = res.data;
                 this.setState({ cards: notes });

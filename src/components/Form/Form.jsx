@@ -28,7 +28,7 @@ export default function Form(props) {
             description: body
         };
 
-        axios.post(`http://localhost:9000/v1/notes`, { note })
+        axios.post(`http://127.0.0.1:9000/v1/notes`, { note })
             .then(res => {
                 console.log(res);
                 console.log(res.data);
