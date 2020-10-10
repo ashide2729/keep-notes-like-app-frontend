@@ -1,0 +1,40 @@
+.card-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color:#e6e9e7;
+    color: black;
+    margin: 5px;
+    width: auto;
+    height: auto;
+}
+
+.card-title{
+    display: flex;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.card-description{
+    display: flex;
+    margin: 5px;
+}
+
+.card-footer{
+    display: flex;
+    border-top: 1px solid black;
+    border-top-width: 80%;
+    margin: 5px;
+    justify-content: space-between;
+}
+
+.card-tags{
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.createdAt{
+    width: auto;
+}
