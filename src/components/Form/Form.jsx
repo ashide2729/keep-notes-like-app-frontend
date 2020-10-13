@@ -23,12 +23,16 @@ export default function Form(props) {
     // }
 
     function postNote(head, body) {
-        const note = {
-            title: head,
-            description: body
-        };
+        let axiosConfig = {
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8',
+                "Access-Control-Allow-Origin": "*",
+            }
+          };
 
-        axios.post(`http://127.0.0.1:9000/v1/notes`, { note })
+        const note = JSON.stringify({ title: head, description: body });
+
+        axios.post(`http://localhost:9000/v1/notes`, note, axiosConfig)
             .then(res => {
                 console.log(res);
                 console.log(res.data);

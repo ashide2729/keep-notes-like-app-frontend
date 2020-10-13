@@ -20,7 +20,7 @@ export default function Card(props) {
                     }
                 </div>
                 <div className="createdAt">
-                    {props.card.createdAt}
+                    { new Date(props.card.createdAt).toDateString().slice(3)}
                 </div>
             </div>
         </div>

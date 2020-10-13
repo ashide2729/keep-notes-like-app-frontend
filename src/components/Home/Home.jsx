@@ -15,7 +15,7 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://127.0.0.1:9000/v1/notes`)
+        axios.get(`http://localhost:9000/v1/notes`)
             .then(res => {
                 const notes = res.data;
                 console.log(notes)
@@ -23,13 +23,14 @@ export default class Home extends Component {
             })
     }
 
-    componentDidUpdate() {
-
-        axios.get(`http://127.0.0.1:9000/v1/notes`)
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.showForm !== this.state.showForm && this.state.showForm === false){
+            axios.get(`http://localhost:9000/v1/notes`)
             .then(res => {
                 const notes = res.data;
                 this.setState({ cards: notes });
             })
+        }
     }
 
     toggleForm = () => {
